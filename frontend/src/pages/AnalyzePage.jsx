@@ -3,13 +3,12 @@ import { useDropzone } from "react-dropzone";
 import toast from "react-hot-toast";
 
 import API from "/services/api";
-
-import UploadSection from "../../components/UploadSection";
+import UploadSection from "../../components/uploadSection"
 import MRIComparison from "../../components/MRIComparison";
-import PredictionCard from "../../components/PredictionCard";
-import ReportCard from "../../components/ReportCard";
-import ActionButtons from "../../components/ActionButtons";
-import Chatbot from "../../components/Chatbot";
+import PredictionCard from "../../components/predictionCard";
+import ReportCard from "../../components/reportCard";
+import ActionButtons from "../../components/actionButtons";
+import Chatbot from "../../components/chatbot";
 
 
 export default function AnalyzePage() {

@@ -11,12 +11,16 @@ from app.routes.cleanup import router as cleanup_router
 
 #----FASTAPI APP----#
 
+print("Starting CerebroVision Backend...")
+
 app = FastAPI(
     title="Brain Tumor MRI Classification API",
     description=("Explainable Vision-Language AI System "
                 "for Brain Tumor Analysis"),
     version="1.0.0",
 )
+
+print("Mounting static files...")
 
 app.mount(
     "/static",
@@ -45,6 +49,9 @@ def health_check():
         "service": "CereboVision API",
     }
             
+
+print("Registering routes...")
+
 app.include_router(pdf_router)
 app.include_router(predict_router)
 app.include_router(report_router)

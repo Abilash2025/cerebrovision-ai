@@ -44,6 +44,8 @@ def model_load():
 
 def predict_image(image_path:str):
 
+    print("Loading TensorFlow model...")
+    
     model = model_load()
 
     image = Image.open(image_path).convert("RGB")

@@ -4,12 +4,12 @@ import toast from "react-hot-toast";
 
 import API from "/services/api";
 
-import UploadSection from "/components/UploadSection";
-import MRIComparison from "/components/MRIComparison";
-import PredictionCard from "/components/PredictionCard";
-import ReportCard from "/components/ReportCard";
-import ActionButtons from "/components/ActionButtons";
-import Chatbot from "/components/Chatbot";
+import UploadSection from "../../components/UploadSection";
+import MRIComparison from "../../components/MRIComparison";
+import PredictionCard from "../../components/PredictionCard";
+import ReportCard from "../../components/ReportCard";
+import ActionButtons from "../../components/ActionButtons";
+import Chatbot from "../../components/Chatbot";
 
 
 export default function AnalyzePage() {

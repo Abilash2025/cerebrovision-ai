@@ -232,8 +232,6 @@ export default function AnalyzePage() {
 
             try {
 
-                console.log("Button clicked");
-
                 if (!prediction) {
 
                     toast.error(
@@ -242,17 +240,6 @@ export default function AnalyzePage() {
 
                     return;
                 }
-
-                // --------------------------------
-                // Hide Existing Grad-CAM
-                // --------------------------------
-
-                // if (showGradcam) {
-
-                //     setShowGradcam(false);
-
-                //     return;
-                // }
 
                 // --------------------------------
                 // Ensure Grad-CAM Exists
@@ -264,8 +251,7 @@ export default function AnalyzePage() {
                 // Show Grad-CAM only when User requests
                 // --------------------------------
                 setGradcamImage(gradcamData.url);
-                console.log("Gradcam_path: ", gradcamData.url);
-                console.log("Gradcam_local_path", gradcamData.localPath);
+
                 setShowGradcam(true);
 
                 toast.success(
@@ -340,10 +326,6 @@ export default function AnalyzePage() {
                     );
 
                 setReportSections(
-                    response.data
-                        .report_sections
-                );
-                console.log(
                     response.data
                         .report_sections
                 );

@@ -1,7 +1,7 @@
 from fastapi import APIRouter, HTTPException
 
-from backend.app.schemas.report_schema import ReportRequest
-from backend.app.services.report_service import create_report
+from app.schemas.report_schema import ReportRequest
+from app.services.report_service import create_report
 
 router = APIRouter()
 

@@ -7,8 +7,8 @@ from fastapi import (
 )
 from sympy import true
 
-from backend.app.routes.predict import UPLOAD_DIR
-from backend.app.services.gradcam_service import create_gradcam
+from app.routes.predict import UPLOAD_DIR
+from app.services.gradcam_service import create_gradcam
 
 
 router = APIRouter()

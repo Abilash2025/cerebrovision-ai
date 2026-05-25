@@ -1,11 +1,11 @@
 from fastapi import APIRouter, BackgroundTasks, HTTPException
 from fastapi.responses import StreamingResponse
 
-from backend.app.schemas.pdf_schema import PDFRequest
-from backend.app.services.pdf_service import (
+from app.schemas.pdf_schema import PDFRequest
+from app.services.pdf_service import (
     generate_pdf_report
 )
-from backend.app.utils.file_utils import cleanup_files
+from app.utils.file_utils import cleanup_files
 
 router = APIRouter()
 

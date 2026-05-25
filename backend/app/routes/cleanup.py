@@ -3,7 +3,7 @@ from sre_constants import SUCCESS
 from fastapi import APIRouter
 from sympy import true
 
-from backend.app.utils.file_utils import cleanup_files
+from app.utils.file_utils import cleanup_files
 
 router = APIRouter()
 

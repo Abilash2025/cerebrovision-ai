@@ -1,4 +1,4 @@
-from backend.app.chatbot import generate_chat_response
+from app.chatbot import generate_chat_response
 
 from ml.vlm.report_generator import generate_radiology_report
 

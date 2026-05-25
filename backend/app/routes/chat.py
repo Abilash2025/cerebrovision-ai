@@ -3,8 +3,8 @@ from fastapi import (
     HTTPException,
 )
 
-from backend.app.schemas.chat_schema import ChatRequest
-from backend.app.services.chatbot_service import generate_chat_response
+from app.schemas.chat_schema import ChatRequest
+from app.services.chatbot_service import generate_chat_response
 
 router = APIRouter()
 

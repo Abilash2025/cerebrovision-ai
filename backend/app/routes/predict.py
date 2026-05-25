@@ -7,7 +7,7 @@ from fastapi import (
 )
 from sympy import true
 
-from backend.app.services.prediction_service import run_prediction
+from app.services.prediction_service import run_prediction
 
 router = APIRouter()
 

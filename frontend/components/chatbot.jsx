@@ -371,6 +371,9 @@ export default function Chatbot({
     className="
         self-start
 
+        max-w-[85%]
+        min-w-[220px]
+
         bg-zinc-800
 
         text-zinc-300
@@ -384,6 +387,8 @@ export default function Chatbot({
         items-center
 
         gap-2
+
+        w-fit
     "
 >
 

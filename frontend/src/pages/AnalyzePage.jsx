@@ -648,12 +648,21 @@ export default function AnalyzePage() {
 
             {/* Chatbot */}
             {
-                prediction
-                && showChatbot && (
+                prediction && (
 
-                    <Chatbot
-                        prediction={prediction}
-                    />
+                    <div
+                        className={
+                            showChatbot
+                                ? "block"
+                                : "hidden"
+                        }
+                    >
+
+                        <Chatbot
+                            prediction={prediction}
+                        />
+
+                    </div>
                 )
             }
         </div>

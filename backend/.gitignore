@@ -1,0 +1,45 @@
+# Virtual Environment
+venv/
+
+# Python Cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Environment Variables
+.env
+
+# Dataset Files
+ml/data/
+
+# Model Weights
+*.pt
+*.ckpt
+
+# Logs
+logs/
+*.log
+
+# IDE
+.vscode/
+.idea/
+
+# OS Files
+.DS_Store
+Thumbs.db
+
+# Coverage
+.coverage
+htmlcov/
+
+# Build Files
+dist/
+build/
+*.egg-info/
+
+#Temporary storage
+tmp

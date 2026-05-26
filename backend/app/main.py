@@ -1,3 +1,4 @@
+import os
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
@@ -10,9 +11,6 @@ from app.routes.gradcam import router as gradcam_router
 from app.routes.cleanup import router as cleanup_router
 
 #----FASTAPI APP----#
-
-print("Starting CerebroVision Backend...")
-
 app = FastAPI(
     title="Brain Tumor MRI Classification API",
     description=("Explainable Vision-Language AI System "
@@ -20,12 +18,15 @@ app = FastAPI(
     version="1.0.0",
 )
 
-print("Mounting static files...")
+os.makedirs(
+    "/tmp",
+    exist_ok=True
+)
 
 app.mount(
     "/static",
     StaticFiles(
-        directory="ml/experiments"
+        directory="tmp"
     ),
     name="static",
 )
@@ -33,16 +34,29 @@ app.mount(
 #----CORS Configuration----#
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173"],
+    allow_origins=["https://cerebrovision-ai.vercel.app/"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
 
+os.makedirs(
+    "/tmp/uploads",
+    exist_ok=True
+)
 
+os.makedirs(
+    "/tmp/gradcam",
+    exist_ok=True
+)
+
+os.makedirs(
+    "/tmp/reports",
+    exist_ok=True
+)
 #----Health Check Endpoint----#
 
-@app.get("/health")
+@app.get("/")
 def health_check():
     return {
         "status": "ok",
@@ -50,7 +64,6 @@ def health_check():
     }
             
 
-print("Registering routes...")
 
 app.include_router(pdf_router)
 app.include_router(predict_router)

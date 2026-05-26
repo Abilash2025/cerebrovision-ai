@@ -25,7 +25,7 @@ CHECKPOIT_PATH = "ml/experiments/checkpoints/best_model.pth"
 
 DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
-OUTPUT_DIR = Path("ml/experiments/gradcam")
+OUTPUT_DIR = Path("tmp/gradcam")
 OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
 #----Model Loading----#

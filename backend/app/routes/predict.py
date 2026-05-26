@@ -11,7 +11,7 @@ from app.services.prediction_service import run_prediction
 
 router = APIRouter()
 
-UPLOAD_DIR = Path("backend/uploads")
+UPLOAD_DIR = Path("tmp/uploads")
 UPLOAD_DIR.mkdir(
     exist_ok=True,
     parents=True

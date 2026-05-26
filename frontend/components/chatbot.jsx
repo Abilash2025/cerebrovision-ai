@@ -216,99 +216,109 @@ export default function Chatbot({
 
                 {/* Empty State */}
 
-                {
-                    messages.length === 0 && (
+                <div
+                    className={`
+                        min-w-full
 
-                        <div
+        ${messages.length === 0
+
+                            ? "visible static"
+
+                            : "invisible absolute"
+                        }
+    `}
+                >
+
+                    <div
+                        className="
+            text-zinc-500
+            text-sm
+
+            flex
+            flex-wrap
+
+            gap-3
+        "
+                    >
+
+                        <button
+                            onClick={() =>
+                                setUserInput(
+                                    "What does this prediction mean?"
+                                )
+                            }
+
                             className="
-                        text-zinc-500
-                        text-sm
+                bg-zinc-800
+                hover:bg-zinc-700
 
-                        flex
-                        flex-wrap
+                border
+                border-zinc-700
 
-                        gap-3
-                    "
+                px-4
+                py-2
+
+                rounded-xl
+
+                transition
+            "
                         >
+                            What does this prediction mean?
+                        </button>
 
-                            <button
-                                onClick={() =>
-                                    setUserInput(
-                                        "What does this prediction mean?"
-                                    )
-                                }
+                        <button
+                            onClick={() =>
+                                setUserInput(
+                                    "How accurate is this prediction?"
+                                )
+                            }
 
-                                className="
-                            bg-zinc-800
-                            hover:bg-zinc-700
+                            className="
+                bg-zinc-800
+                hover:bg-zinc-700
 
-                            border
-                            border-zinc-700
+                border
+                border-zinc-700
 
-                            px-4
-                            py-2
+                px-4
+                py-2
 
-                            rounded-xl
+                rounded-xl
 
-                            transition
-                        "
-                            >
-                                What does this prediction mean?
-                            </button>
+                transition
+            "
+                        >
+                            How accurate is this prediction?
+                        </button>
 
-                            <button
-                                onClick={() =>
-                                    setUserInput(
-                                        "How accurate is this prediction?"
-                                    )
-                                }
+                        <button
+                            onClick={() =>
+                                setUserInput(
+                                    "What is Grad-CAM?"
+                                )
+                            }
 
-                                className="
-                            bg-zinc-800
-                            hover:bg-zinc-700
+                            className="
+                bg-zinc-800
+                hover:bg-zinc-700
 
-                            border
-                            border-zinc-700
+                border
+                border-zinc-700
 
-                            px-4
-                            py-2
+                px-4
+                py-2
 
-                            rounded-xl
+                rounded-xl
 
-                            transition
-                        "
-                            >
-                                How accurate is this prediction?
-                            </button>
+                transition
+            "
+                        >
+                            What is Grad-CAM?
+                        </button>
 
-                            <button
-                                onClick={() =>
-                                    setUserInput(
-                                        "What is Grad-CAM?"
-                                    )
-                                }
+                    </div>
 
-                                className="
-                            bg-zinc-800
-                            hover:bg-zinc-700
-
-                            border
-                            border-zinc-700
-
-                            px-4
-                            py-2
-
-                            rounded-xl
-
-                            transition
-                        "
-                            >
-                                What is Grad-CAM?
-                            </button>
-
-                        </div>
-                    )
-                }
+                </div>
 
                 {/* Chat Messages */}
 
@@ -369,9 +379,6 @@ export default function Chatbot({
                         <div
                             className="
         self-start
-
-        w-full
-        max-w-3xl
 
         bg-zinc-800
 

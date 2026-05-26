@@ -78,13 +78,8 @@ function UploadSection({
         </p>
 
         <a
-<<<<<<< HEAD
           href="/test-images/sample-mri.jpg"
           download = "sample-mri.jpg"
-=======
-          href="../test-images/sample-mri.jpg"
-          download
->>>>>>> 439b583af305b3ea76614c4b2fd42bddf23a1802
 
           className="
             inline-flex

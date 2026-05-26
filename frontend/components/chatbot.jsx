@@ -372,7 +372,7 @@ export default function Chatbot({
         self-start
 
         max-w-[85%]
-        min-w-[220px]
+        min-w-[580px]
 
         bg-zinc-800
 

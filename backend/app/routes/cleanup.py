@@ -8,10 +8,8 @@ from app.utils.file_utils import cleanup_files
 router = APIRouter()
 
 @router.post("/cleanup")
-async def cleanup_cache(
-    paths: list[str]
-):
-    cleanup_files(*paths)
+async def cleanup_cache():
+    cleanup_files()
 
     return {
         "success" : True

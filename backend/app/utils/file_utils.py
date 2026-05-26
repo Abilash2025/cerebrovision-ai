@@ -1,17 +1,41 @@
 import os
-from pathlib import Path
+from fastapi import HTTPException
 
 
-def cleanup_files(
-    *file_paths
-):
-    for path in file_paths:
-        try:
-            file_path = Path(path)
+def cleanup_files():
+    try:
 
-            if file_path.exists():
-                file_path.unlink()
-                print(f"Deleted: {file_path}")
+        folders = [
 
-        except Exception as e:
-            print(f"Cleanup failed for {path}")
+            "tmp/uploads",
+
+            "tmp/gradcam",
+
+            "tmp/reports",
+        ]
+
+        for folder in folders:
+
+            if os.path.exists(folder):
+
+                for file in os.listdir(folder):
+
+                    file_path = os.path.join(
+                        folder,
+                        file
+                    )
+
+                    if os.path.isfile(file_path):
+
+                        os.remove(file_path)
+
+        return {
+            "success": True
+        }
+
+    except Exception as e:
+
+        raise HTTPException(
+            status_code=500,
+            detail=str(e)
+        )

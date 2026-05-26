@@ -42,6 +42,13 @@ test-images/Test_Image_Glioma.jpg
 
 ---
 
+## Demo Video
+
+Watch the full project walkthrough here:
+
+[🎥 Watch Demo](https://youtu.be/7ijL7urMzU4)
+
+---
 ## Screenshots
 
 ### Landing Page

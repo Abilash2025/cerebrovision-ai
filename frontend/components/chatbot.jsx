@@ -65,94 +65,94 @@ export default function Chatbot({
     const handleSendMessage =
         async () => {
 
-        if (!userInput.trim()) {
+            if (!userInput.trim()) {
 
-            toast.error(
-                "Please enter a question."
-            );
-
-            return;
-        }
-
-        try {
-
-            setLoading(true);
-
-            // --------------------------------
-            // Add User Message
-            // --------------------------------
-
-            const updatedMessages = [
-
-                ...messages,
-
-                {
-                    role: "user",
-
-                    content:
-                        userInput,
-                },
-            ];
-
-            setMessages(
-                updatedMessages
-            );
-
-            const currentQuestion =
-                userInput;
-
-            setUserInput("");
-
-            // --------------------------------
-            // API Request
-            // --------------------------------
-
-            const response =
-                await API.post(
-                    "/chat",
-
-                    {
-                        user_question:
-                            currentQuestion,
-
-                        prediction:
-                            prediction
-                                ?.predicted_label,
-
-                        confidence:
-                            prediction
-                                ?.confidence_score,
-                    }
+                toast.error(
+                    "Please enter a question."
                 );
 
-            // --------------------------------
-            // Add AI Response
-            // --------------------------------
+                return;
+            }
 
-            setMessages([
+            try {
 
-                ...updatedMessages,
+                setLoading(true);
 
-                {
-                    role: "assistant",
+                // --------------------------------
+                // Add User Message
+                // --------------------------------
 
-                    content:
-                        response.data
-                            .response,
-                },
-            ]);
+                const updatedMessages = [
 
-        } catch (err) {
+                    ...messages,
 
-            toast.error(
-                "Chat response failed."
-            );
+                    {
+                        role: "user",
 
-        } finally {
+                        content:
+                            userInput,
+                    },
+                ];
 
-            setLoading(false);
-        }
-    };
+                setMessages(
+                    updatedMessages
+                );
+
+                const currentQuestion =
+                    userInput;
+
+                setUserInput("");
+
+                // --------------------------------
+                // API Request
+                // --------------------------------
+
+                const response =
+                    await API.post(
+                        "/chat",
+
+                        {
+                            user_question:
+                                currentQuestion,
+
+                            prediction:
+                                prediction
+                                    ?.predicted_label,
+
+                            confidence:
+                                prediction
+                                    ?.confidence_score,
+                        }
+                    );
+
+                // --------------------------------
+                // Add AI Response
+                // --------------------------------
+
+                setMessages([
+
+                    ...updatedMessages,
+
+                    {
+                        role: "assistant",
+
+                        content:
+                            response.data
+                                .response,
+                    },
+                ]);
+
+            } catch (err) {
+
+                toast.error(
+                    "Chat response failed."
+                );
+
+            } finally {
+
+                setLoading(false);
+            }
+        };
 
     // --------------------------------
     // Render ChatBot
@@ -160,8 +160,8 @@ export default function Chatbot({
 
     return (
 
-<div
-    className="
+        <div
+            className="
         mt-10
 
         w-full
@@ -180,26 +180,26 @@ export default function Chatbot({
 
         backdrop-blur-md
     "
->
+        >
 
-    {/* Header */}
+            {/* Header */}
 
-    <h2
-        className="
+            <h2
+                className="
             text-2xl
             font-semibold
             text-zinc-200
 
             mb-6
         "
-    >
-        Chat with CerebroVision
-    </h2>
+            >
+                Chat with CerebroVision
+            </h2>
 
-    {/* Messages */}
+            {/* Messages */}
 
-    <div
-        className="
+            <div
+                className="
             h-[400px]
 
             overflow-y-auto
@@ -212,15 +212,15 @@ export default function Chatbot({
 
             pr-2
         "
-    >
+            >
 
-        {/* Empty State */}
+                {/* Empty State */}
 
-        {
-            messages.length === 0 && (
+                {
+                    messages.length === 0 && (
 
-                <div
-                    className="
+                        <div
+                            className="
                         text-zinc-500
                         text-sm
 
@@ -229,16 +229,16 @@ export default function Chatbot({
 
                         gap-3
                     "
-                >
+                        >
 
-                    <button
-                        onClick={() =>
-                            setUserInput(
-                                "What does this prediction mean?"
-                            )
-                        }
+                            <button
+                                onClick={() =>
+                                    setUserInput(
+                                        "What does this prediction mean?"
+                                    )
+                                }
 
-                        className="
+                                className="
                             bg-zinc-800
                             hover:bg-zinc-700
 
@@ -252,18 +252,18 @@ export default function Chatbot({
 
                             transition
                         "
-                    >
-                        What does this prediction mean?
-                    </button>
+                            >
+                                What does this prediction mean?
+                            </button>
 
-                    <button
-                        onClick={() =>
-                            setUserInput(
-                                "How accurate is this prediction?"
-                            )
-                        }
+                            <button
+                                onClick={() =>
+                                    setUserInput(
+                                        "How accurate is this prediction?"
+                                    )
+                                }
 
-                        className="
+                                className="
                             bg-zinc-800
                             hover:bg-zinc-700
 
@@ -277,18 +277,18 @@ export default function Chatbot({
 
                             transition
                         "
-                    >
-                        How accurate is this prediction?
-                    </button>
+                            >
+                                How accurate is this prediction?
+                            </button>
 
-                    <button
-                        onClick={() =>
-                            setUserInput(
-                                "What is Grad-CAM?"
-                            )
-                        }
+                            <button
+                                onClick={() =>
+                                    setUserInput(
+                                        "What is Grad-CAM?"
+                                    )
+                                }
 
-                        className="
+                                className="
                             bg-zinc-800
                             hover:bg-zinc-700
 
@@ -302,27 +302,27 @@ export default function Chatbot({
 
                             transition
                         "
-                    >
-                        What is Grad-CAM?
-                    </button>
+                            >
+                                What is Grad-CAM?
+                            </button>
 
-                </div>
-            )
-        }
+                        </div>
+                    )
+                }
 
-        {/* Chat Messages */}
+                {/* Chat Messages */}
 
-        {
-            messages.map(
-                (
-                    message,
-                    index
-                ) => (
+                {
+                    messages.map(
+                        (
+                            message,
+                            index
+                        ) => (
 
-<div
-    key={index}
+                            <div
+                                key={index}
 
-    className={`
+                                className={`
         max-w-[85%]
 
         p-4
@@ -333,10 +333,9 @@ export default function Chatbot({
 
         leading-7
 
-        ${
-            message.role === "user"
+        ${message.role === "user"
 
-                ? `
+                                        ? `
                     self-end
 
                     bg-zinc-200
@@ -344,35 +343,35 @@ export default function Chatbot({
                     text-black
                 `
 
-                : `
+                                        : `
                     self-start
 
                     bg-zinc-800
 
                     text-zinc-200
                 `
-        }
+                                    }
     `}
->
+                            >
 
-    {message.content}
+                                {message.content}
 
-</div>
-                )
-            )
-        }
+                            </div>
+                        )
+                    )
+                }
 
-        {/* Loading State */}
+                {/* Loading State */}
 
-        {
-            loading && (
+                {
+                    loading && (
 
-<div
-    className="
+                        <div
+                            className="
         self-start
 
-        max-w-[710.797px]
-        min-w-[710.797px]
+        w-full
+        max-w-3xl
 
         bg-zinc-800
 
@@ -389,10 +388,10 @@ export default function Chatbot({
         gap-2
 
     "
->
+                        >
 
-    <div
-        className="
+                            <div
+                                className="
             w-4
             h-4
 
@@ -404,52 +403,52 @@ export default function Chatbot({
 
             animate-spin
         "
-    />
+                            />
 
-    <span>
-        CerebroVision is typing...
-    </span>
+                            <span>
+                                CerebroVision is typing...
+                            </span>
 
-</div>
-            )
-        }
+                        </div>
+                    )
+                }
 
-        {/* Auto Scroll Ref */}
+                {/* Auto Scroll Ref */}
 
-        <div ref={messagesEndRef} />
+                <div ref={messagesEndRef} />
 
-    </div>
+            </div>
 
-    {/* Input Section */}
+            {/* Input Section */}
 
-    <div
-        className="
+            <div
+                className="
             mt-6
 
             flex
 
             gap-3
         "
-    >
+            >
 
-        <input
-            type="text"
+                <input
+                    type="text"
 
-            value={userInput}
+                    value={userInput}
 
-            onChange={(e) =>
-                setUserInput(
-                    e.target.value
-                )
-            }
+                    onChange={(e) =>
+                        setUserInput(
+                            e.target.value
+                        )
+                    }
 
-            placeholder="
+                    placeholder="
                 Ask about the MRI findings...
             "
 
-            disabled={loading}
+                    disabled={loading}
 
-            className="
+                    className="
                 flex-1
 
                 bg-zinc-950
@@ -472,28 +471,28 @@ export default function Chatbot({
                 disabled:cursor-not-allowed
             "
 
-            onKeyDown={(e) => {
+                    onKeyDown={(e) => {
 
-                if (
-                    e.key === "Enter"
-                ) {
+                        if (
+                            e.key === "Enter"
+                        ) {
 
-                    handleSendMessage();
-                }
-            }}
-        />
+                            handleSendMessage();
+                        }
+                    }}
+                />
 
-        <button
-            onClick={
-                handleSendMessage
-            }
+                <button
+                    onClick={
+                        handleSendMessage
+                    }
 
-            disabled={
-                loading ||
-                !userInput.trim()
-            }
+                    disabled={
+                        loading ||
+                        !userInput.trim()
+                    }
 
-            className="
+                    className="
                 bg-zinc-200
                 hover:bg-zinc-300
 
@@ -510,18 +509,18 @@ export default function Chatbot({
 
                 font-medium
             "
-        >
+                >
 
-            {
-                loading
-                    ? "Sending..."
-                    : "Send"
-            }
+                    {
+                        loading
+                            ? "Sending..."
+                            : "Send"
+                    }
 
-        </button>
+                </button>
 
-    </div>
+            </div>
 
-</div>
+        </div>
     );
 }

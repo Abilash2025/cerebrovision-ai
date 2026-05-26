@@ -78,7 +78,7 @@ function UploadSection({
         </p>
 
         <a
-          href="/test-images/sample-mri.jpg"
+          href="../test-images/sample-mri.jpg"
           download
 
           className="

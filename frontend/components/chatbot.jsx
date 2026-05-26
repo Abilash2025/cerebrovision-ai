@@ -166,6 +166,7 @@ export default function Chatbot({
 
         w-full
         max-w-3xl
+        min-w-3xl
 
         bg-zinc-900/70
 

@@ -79,7 +79,7 @@ function UploadSection({
 
         <a
           href="/test-images/sample-mri.jpg"
-          download
+          download = "sample-mri.jpg"
 
           className="
             inline-flex

@@ -21,6 +21,26 @@ AI-Assisted Brain Tumor Detection, Explainability, Structured Radiology Reportin
 ![Architecture Diagram](docs/screenshots/cerebrovision-ai-architecture-diagram.jpg)
 
 ---
+## Deployement
+
+Include:
+- frontend link : https://cerebrovision-ai.vercel.app/
+- backend link : https://abilash2025-cerebrovision-backend.hf.space
+
+---
+
+## Test MRI Scan
+
+A sample MRI scan has been included in the repository for quick testing and demonstration purposes.
+
+You can find the test image inside:
+
+```bash
+test-images/Test_Image_Glioma.jpg
+```
+> Note: The sample MRI scan is included strictly for educational and demonstration purposes.
+
+---
 
 ## Screenshots
 
@@ -86,12 +106,6 @@ Create a `.env` file inside backend:
 GEMINI_API_KEY=your_api_key
 MODEL=gemini-3.0-flash-lite
 ```
----
-## Deployement
-
-Include:
-- frontend link
-- backend link
 
 ---
 ## Model Limitations
